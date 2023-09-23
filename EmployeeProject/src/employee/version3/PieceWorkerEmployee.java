@@ -1,64 +1,26 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package employee.version1;
+package employee.version3;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
  *
- * @author User
+ * @author angel
  */
-public class PieceWorkerEmployee {
-    private int empID;
-    private String empName;
-    private Date empDateHired;
-    private Date empBirthDate;
+public class PieceWorkerEmployee extends Employee{
     private int totalPiecesFinished;
     private float ratePerPiece;
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
-        this.empID = empID;
-        this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
+    public PieceWorkerEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+        super(empID, empName, empDateHired, empBirthDate);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
     
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-    
-    public int getEmpID() {
-        return empID;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-    
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpDateHired(Date empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-    
-    public Date getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpBirthDate(Date empBirthDate) {
-        this.empBirthDate = empBirthDate;
-    }
-    
-    public Date getEmpBirthDate() {
-        return empBirthDate;
-    }
-
     public void setTotalPiecesFinished(int totalPiecesFinished) {
         this.totalPiecesFinished = totalPiecesFinished;
     }
@@ -91,8 +53,7 @@ public class PieceWorkerEmployee {
         SimpleDateFormat ft = new SimpleDateFormat ("dd-MM-yyyy");
         StringBuilder sb = new StringBuilder();
         
-        sb.append(getEmpID()).append(" ")
-        .append(getEmpName()).append(" ")
+        sb.append(getEmpID()).append(" ").append(getName())
         .append(ft.format(getEmpDateHired())).append(" ")
         .append(ft.format(getEmpBirthDate())).append(" ")
         .append(this.totalPiecesFinished).append(" ").append(this.ratePerPiece);
@@ -100,3 +61,4 @@ public class PieceWorkerEmployee {
         return sb.toString();
     }
 }
+

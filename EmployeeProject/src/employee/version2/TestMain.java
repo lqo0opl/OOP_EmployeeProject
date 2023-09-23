@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version1;
+package employee.version2;
+
 import java.util.Date;
 import java.util.Calendar;
 /**
  *
  * @author User
  */
-public class TestMain{
+public class TestMain {
      public static void main(String[] args) {
          Calendar calendar = Calendar.getInstance(); 
          
@@ -44,4 +45,3 @@ public class TestMain{
     }   
     
 }
-
