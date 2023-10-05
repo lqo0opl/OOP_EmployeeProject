@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package employee.version4;
+package employee.version6;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author angel
  */
-public class Employee extends EmployeeRoster{
+public abstract class Employee extends EmployeeRoster{
     private int empID;
     private Date empDateHired;
     private Date empBirthDate;
@@ -69,4 +69,5 @@ public class Employee extends EmployeeRoster{
         this.name = name;
     }
     
+    public abstract double computeSalary();
 }

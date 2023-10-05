@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version5;
+package employee.version6;
 import java.util.ArrayList;
 /**
  *
@@ -30,23 +30,7 @@ public class EmployeeRoster{
     
     public void displayEmployee(Employee type){
         if(type.getName()!=null){
-            if(type instanceof HourlyEmployee){
-                HourlyEmployee temp = (HourlyEmployee)type;
-                System.out.println(type+" "+temp.computeSalary());
-            }
-            else if(type instanceof CommissionEmployee){
-                if(type instanceof BasePlusCommissionEmployee){
-                    BasePlusCommissionEmployee temp = (BasePlusCommissionEmployee)type;
-                    System.out.println(type+" "+temp.computeSalary());
-                }else{
-                    CommissionEmployee temp = (CommissionEmployee)type;
-                    System.out.println(type+" "+temp.computeSalary());
-                }
-            }  
-            else if(type instanceof PieceWorkerEmployee){
-                PieceWorkerEmployee temp = (PieceWorkerEmployee)type;
-                System.out.println(type+" "+temp.computeSalary());
-            }
+         System.out.println(type+" "+type.computeSalary());
         }
     }
 
@@ -54,23 +38,7 @@ public class EmployeeRoster{
         if(!this.emp.isEmpty()){
             int i;
             for(i=0; i<this.emp.size(); i++){
-                if(this.emp.get(i) instanceof HourlyEmployee){
-                    HourlyEmployee temp = (HourlyEmployee)this.emp.get(i);
-                    System.out.println(this.emp.get(i)+" "+temp.computeSalary());
-                }
-                else if(this.emp.get(i) instanceof CommissionEmployee){
-                    if(this.emp.get(i) instanceof BasePlusCommissionEmployee){
-                        BasePlusCommissionEmployee temp = (BasePlusCommissionEmployee)this.emp.get(i);
-                        System.out.println(this.emp.get(i)+" "+temp.computeSalary());
-                    }else{
-                        CommissionEmployee temp = (CommissionEmployee)this.emp.get(i);
-                        System.out.println(this.emp.get(i)+" "+temp.computeSalary());
-                    }
-                }             
-                else if(this.emp.get(i) instanceof PieceWorkerEmployee){
-                    PieceWorkerEmployee temp = (PieceWorkerEmployee)this.emp.get(i);
-                    System.out.println(this.emp.get(i)+" "+temp.computeSalary());
-                }
+               System.out.println(this.emp.get(i)+" "+this.emp.get(i).computeSalary());
             }
             System.out.println();
         }

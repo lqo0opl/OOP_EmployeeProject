@@ -53,6 +53,7 @@ public class TestMain{
         roster.displayAllEmployees();
         
         //SEARCH FOR EMPLOYEE
-        System.out.println(roster.searchEmployee("Jake"));
-        }
+        EmployeeRoster roster2 = new EmployeeRoster();
+        roster2 = roster.searchEmployee("Jake");
+     }
 }

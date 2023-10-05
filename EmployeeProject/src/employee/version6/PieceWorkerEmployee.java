@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package employee.version4;
+package employee.version6;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,6 +49,7 @@ public class PieceWorkerEmployee extends Employee{
         return ratePerPiece;
     }
     
+    @Override
     public double computeSalary(){
         int perhundpieces = this.totalPiecesFinished / 100;
         double bonus = 10*this.ratePerPiece;

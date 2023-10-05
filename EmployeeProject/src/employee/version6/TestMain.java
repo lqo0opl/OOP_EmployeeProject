@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version4;
+package employee.version6;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -18,7 +18,7 @@ public class TestMain{
         calendar.set(2020, (5)-1, 3); Date dates = calendar.getTime();
 
         //EMPLOYEES
-        Employee e1 = new HourlyEmployee(1, new Name("Jack"), date, dates,41,30);
+        HourlyEmployee e1 = new HourlyEmployee(1, new Name("Jack"), date, dates,41,30);
         Employee e2 = new CommissionEmployee(2,new Name("Ash", "Dunno"), date, dates, 5000);
         Employee e3 = new BasePlusCommissionEmployee(3,new Name("Blake", "W", "What"), date, dates, 5000, 500);
         Employee e4 = new PieceWorkerEmployee(4, new Name("Jake", "M", "Paul"), date, dates, 100, 500);
@@ -36,25 +36,24 @@ public class TestMain{
         //DISPLAY ALL EMPLOYEES
         roster.displayAllEmployees();
         
+        //DISPLAY EMPLOYEE
+        roster.displayEmployee(e5);
+        
         //COUNT
         System.out.println(roster.countHE());
         System.out.println(roster.countBCE());
         System.out.println(roster.countCE());
         System.out.println(roster.countPWE());
         
-        //DISPLAY EMPLOYEE
-        roster.displayEmployee(e5);
-        
         //DELETE EMPLOYEE
-        roster.removeEmployee(1);           
+        roster.removeEmployee(1);
         roster.removeEmployee(2);
         roster.removeEmployee(3);
         roster.removeEmployee(4);
         roster.displayAllEmployees();
-       
         
         //SEARCH FOR EMPLOYEE
         EmployeeRoster roster2 = new EmployeeRoster();
         roster2 = roster.searchEmployee("Jake");
-     }
+        }
 }

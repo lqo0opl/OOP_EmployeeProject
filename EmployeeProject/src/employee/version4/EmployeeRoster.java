@@ -97,31 +97,39 @@ public class EmployeeRoster{
         }
     }
     
-    public void addEmployee(Employee e){
+    public boolean addEmployee(Employee e){
         if(this.count<this.size){
             this.emplist[this.count] = e;
             this.count++;
+            return true;
         }
+        return false;
     }
     
-    public void removeEmployee(int id){
-        int i;
+    public Employee removeEmployee(int id){
+        int i; Employee ret = null;
         for(i=0; i<this.count && this.emplist[i].getEmpID()!=id; i++){}
-        if(this.emplist[i]!=null){
+        if(this.emplist[i]!=null){  
+            ret = this.emplist[i];
             while(i<this.count){
                 this.emplist[i] = this.emplist[i+1];
                 i++;
             }
-            this.count--;
+            this.count--;          
         }
+        
+        return ret;
     }
+        
     
-    public void updateEmployee(int id, Name name){
+    public boolean updateEmployee(int id, Name name){
         int i;
         for(i=0; i<this.count && this.emplist[i].getEmpID()!=id; i++){}
         if(this.emplist[i].getEmpID()==id){
             this.emplist[i].setName(name);
+            return true;
         }
+        return false;
     }
     
     public int countHE(){
@@ -171,26 +179,13 @@ public class EmployeeRoster{
         return list;
     }
     
-    public Employee searchEmployee(String keyword){
-        int i; Employee search = null;
+    public EmployeeRoster searchEmployee(String keyword){
+        int i; EmployeeRoster search = new EmployeeRoster();;
         
         for(i=0; i<this.count && !(this.emplist[i].getName().getFname().equalsIgnoreCase(keyword)); i++){}
         
         if(this.emplist[i]!=null){
-           if(this.emplist[i] instanceof HourlyEmployee){
-               search = new HourlyEmployee();
-           }
-           if(this.emplist[i] instanceof CommissionEmployee){
-               search = new CommissionEmployee();
-           }
-           if(this.emplist[i] instanceof BasePlusCommissionEmployee){
-               search = new BasePlusCommissionEmployee();
-           }
-           if(this.emplist[i] instanceof PieceWorkerEmployee){
-               search = new PieceWorkerEmployee();
-           }
-      
-            search = this.emplist[i];
+           search.addEmployee(this.emplist[i]);
         }
         return search;
     }
