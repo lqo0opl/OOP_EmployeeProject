@@ -14,6 +14,12 @@ public class Name{
     private String lname = null;
     private String mname = null;
     
+    public Name(){
+        this.fname = "";
+        this.lname = "";
+        this.mname = "";
+    }
+    
     public Name(String fname){
         this.fname = fname;
     }

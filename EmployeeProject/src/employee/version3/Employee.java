@@ -15,12 +15,26 @@ public class Employee{
     private Date empDateHired;
     private Date empBirthDate;
     private Name name;
-
+    
+    public Employee() {
+        this.empID = -1;
+        this.name = new Name();
+        this.empDateHired = new Date();
+        this.empBirthDate = new Date();
+    }
+    
     public Employee(int empID, Name name, Date empDateHired, Date empBirthDate) {
         this.name = name;
         this.empID = empID;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
+    }
+    
+    public Employee(int id, Name name, int yearHire, int monthHire, int dayHire, int yearBirth, int monthBirth, int dayBirth){
+        this.empID = id;
+        this.name = name;
+        this.empBirthDate = new Date(yearBirth, monthBirth, dayBirth); 
+        this.empDateHired = new Date(yearHire, monthHire, dayHire);
     }
 
     public int getEmpID() {

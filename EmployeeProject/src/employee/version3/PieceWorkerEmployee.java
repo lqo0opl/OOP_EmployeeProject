@@ -21,6 +21,18 @@ public class PieceWorkerEmployee extends Employee{
         this.ratePerPiece = ratePerPiece;
     }
     
+    public PieceWorkerEmployee(){   
+        super();
+        this.totalPiecesFinished = 0;
+        this.ratePerPiece = 0;
+    }
+    
+    public PieceWorkerEmployee(int empID, Name empName, int yearHire, int monthHire, int dayHire, int yearBirth, int monthBirth, int dayBirth, int totalPiecesFinished, float ratePerPiece){
+        super(empID, empName, yearHire, monthHire, dayHire, yearBirth, monthBirth, dayBirth);
+        this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
+    }
+    
     public void setTotalPiecesFinished(int totalPiecesFinished) {
         this.totalPiecesFinished = totalPiecesFinished;
     }
@@ -39,9 +51,10 @@ public class PieceWorkerEmployee extends Employee{
     
     public double computeSalary(){
         int perhundpieces = this.totalPiecesFinished / 100;
-        double bonussalary = perhundpieces * 10* this.ratePerPiece;
+        double bonus = 10*this.ratePerPiece;
+        double bonussalary = perhundpieces * bonus;
       
-        return this.totalPiecesFinished * this.ratePerPiece + bonussalary;
+        return (this.totalPiecesFinished * this.ratePerPiece) + bonussalary;
     }
     
     public void displayInfo(){

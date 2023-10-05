@@ -18,6 +18,16 @@ public class CommissionEmployee extends Employee {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalSales = totalSales;
     }
+    
+    public CommissionEmployee(){   
+        super();
+        this.totalSales = 0;
+    }
+    
+    public CommissionEmployee(int empID, Name empName, int yearHire, int monthHire, int dayHire, int yearBirth, int monthBirth, int dayBirth, double totalSales){
+        super(empID, empName, yearHire, monthHire, dayHire, yearBirth, monthBirth, dayBirth);
+        this.totalSales = totalSales;
+    }
 
     public double getTotalSales() {
         return totalSales;
@@ -28,19 +38,18 @@ public class CommissionEmployee extends Employee {
     }
     
     public double computeSalary(){
-        double sales = getTotalSales();
         double rate;
-         if(sales < 50000){
+         if(getTotalSales() < 50000){
              rate = 0.05;
-         }else if(sales >= 50000 && sales < 100000){
+         }else if(getTotalSales() >= 50000 && getTotalSales() < 100000){
              rate = .20;
-         }else if(sales >= 100000 && sales < 500000){
+         }else if(getTotalSales() >= 100000 && getTotalSales() < 500000){
              rate = .30;
          }else{
              rate = .50;
          }
          
-         return sales * rate;
+         return getTotalSales() * rate;
     }
     
     public void displayInfo(){

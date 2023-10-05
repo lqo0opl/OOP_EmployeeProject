@@ -18,6 +18,16 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
         super(empID, empName, empDateHired, empBirthDate, totalSales);
         this.baseSalary = baseSalary;
     }
+    
+    public BasePlusCommissionEmployee(){   
+        super();
+        this.baseSalary = 0;
+    }
+    
+    public BasePlusCommissionEmployee(int empID, Name empName, int yearHire, int monthHire, int dayHire, int yearBirth, int monthBirth, int dayBirth, double totalSales, double baseSalary){
+        super(empID, empName, yearHire, monthHire, dayHire, yearBirth, monthBirth, dayBirth, totalSales);
+        this.baseSalary = baseSalary;
+    }
 
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
@@ -29,19 +39,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     
     @Override
     public double computeSalary(){  
-        double sales = getTotalSales();
-        double rate;
-         if(sales < 50000){
-             rate = 0.05;
-         }else if(sales >= 50000 && sales < 100000){
-             rate = .20;
-         }else if(sales >= 100000 && sales < 500000){
-             rate = .30;
-         }else{
-             rate = .50;
-         }
-         
-         return (sales * rate) + this.baseSalary;
+        return super.computeSalary() + this.baseSalary;
     }
             
     @Override
